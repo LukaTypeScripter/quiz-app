@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+:root {
+  --html-bg: #FFF1E9;
+  --css-bg: #E0FDEF;
+  --js-bg: #EBF0FF;
+  --accessibility-bg: #F6E7FF;
+  --text-color: #313E51;
+  --text-color-p: #626C7F;
+  --purple: #A729F5;
+  --bg-col: white;
+  --button-bg: white;
+  --option-bg: #F4F6FA;
+  --option-color: #626C7F;
+  --correct-color: #26D782;
+  --invalid-color: #EE5454;
+  --bg: url("./assets/images/images/pattern-background-mobile-light.svg");
+  --sun-src: url("./assets/images/images/icon-sun-dark.svg");
+  --moon-src: url("./assets/images/images/icon-moon-dark.svg");
+}
