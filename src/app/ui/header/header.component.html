@@ -1,0 +1,28 @@
+<article class="header">
+  <div class="header__object">awdawdawda</div>
+
+  <div class="header-darkmode__switch">
+    <div class="header-darkmode__switch-moon">
+      <img  src="" alt="*"/>
+    </div>
+
+    <!-- Use label as the block, input as an element -->
+    <header>
+      <div class="theme-switcher">
+        <label class="switch">
+          <input
+            type="checkbox"
+            [checked]="isLightTheme"
+            (change)="onThemeSwitchChange()"
+          />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </header>
+
+
+    <div class="header-darkmode__switch-sun">
+      <img  src="" alt="*"/>
+    </div>
+  </div>
+</article>
