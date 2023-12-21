@@ -1,0 +1,21 @@
+<article class="home">
+  <!-- home header content -->
+  <div class="home__content">
+    <h1>Welcome to the <span class="home__content-bold">Frontend Quiz!</span></h1>
+    <p>Pick a subject to get started.</p>
+  </div>
+<!-- choices container -->
+    <div class="home__choices" *ngIf="titles$ | async as data" >
+      <button id="HTML" class="home__choices__item"  *ngFor="let types of data" >
+          <div class="home__choices__item__img">
+            <img [src]="types.icon" class="home__choices__item-img" [ngClass]="{
+  'html': types.title === 'HTML',
+   'css': types.title === 'CSS',
+    'js': types.title === 'JavaScript',
+     'acc': types.title === 'Accessibility'
+}" />
+          </div>
+            {{types.title}}
+      </button >
+    </div>
+</article>

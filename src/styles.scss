@@ -38,8 +38,7 @@ body {
   --header-menu-item-color: #231f20;
   --header-theme-switch-background-color: #cccccc;
   --header-theme-switch-before-background-color: #ffffff;
-  --header-theme-switch-checked-background-color: #2196f3;
-
+  --header-theme-switch-checked-background-color: #A729F5;
   --main-content-background-color: #ffffff;
   --main-content-text-color: #231f20;
 }
@@ -49,12 +48,10 @@ body {
   --text-color-p: #ABC1E1;
   --bg-col: #313E51;
   --button-bg: #3B4D66;
-  --bg: url("./assets/images/images/pattern-background-desktop-dark.svg");
-  --sun-src: url('./assets/images/images/icon-sun-light.svg');
-  --moon-src: url('./assets/images/images/icon-moon-light.svg');
+  --bg: url("./assets/images/images/pattern-background-mobile-dark.svg");
+  --sun-src: url("./assets/images/images/icon-sun-light.svg");
+  --moon-src: url("./assets/images/images/icon-moon-light.svg");
+  --header-theme-switch-background-color: #A729F5;
   --header-theme-switch-before-background-color: #ffffff;
   --header-theme-switch-checked-background-color: #2196f3;
-
-  --main-content-background-color: #231f20;
-  --main-content-text-color: #ffffff;
 }

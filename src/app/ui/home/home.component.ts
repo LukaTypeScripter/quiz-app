@@ -13,13 +13,14 @@ import {CommonModule} from "@angular/common";
 })
 export class HomeComponent implements OnInit{
   constructor(private campaign: CampaignService) {}
-
+  public titles$ = this.campaign.$titles.asObservable()
 
 ngOnInit() {
+this.titles$.pipe(map((res) => {
+  console.log(res,"awdawd")
+})).subscribe()
 
-
-  console.log( this.campaign.getQuizData())
-
+this.campaign.getTitles()
 }
 
 }
