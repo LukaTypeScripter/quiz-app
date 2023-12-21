@@ -19,3 +19,42 @@
   --sun-src: url("./assets/images/images/icon-sun-dark.svg");
   --moon-src: url("./assets/images/images/icon-moon-dark.svg");
 }
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: var(--bg-col);
+  background-image: var(--bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+
+[data-theme="light"] {
+  --header-background-color: #ffffff;
+  --header-border-color: #e5e8ea;
+  --header-menu-item-color: #231f20;
+  --header-theme-switch-background-color: #cccccc;
+  --header-theme-switch-before-background-color: #ffffff;
+  --header-theme-switch-checked-background-color: #2196f3;
+
+  --main-content-background-color: #ffffff;
+  --main-content-text-color: #231f20;
+}
+
+[data-theme="dark"] {
+  --text-color: #FFF;
+  --text-color-p: #ABC1E1;
+  --bg-col: #313E51;
+  --button-bg: #3B4D66;
+  --bg: url("./assets/images/images/pattern-background-desktop-dark.svg");
+  --sun-src: url('./assets/images/images/icon-sun-light.svg');
+  --moon-src: url('./assets/images/images/icon-moon-light.svg');
+  --header-theme-switch-before-background-color: #ffffff;
+  --header-theme-switch-checked-background-color: #2196f3;
+
+  --main-content-background-color: #231f20;
+  --main-content-text-color: #ffffff;
+}

@@ -16,9 +16,10 @@ export class HomeComponent implements OnInit{
 
 
 ngOnInit() {
-this.campaign.getQuizData().pipe(map((res) => {
-  console.log(res)
-}))
+
+
+  console.log( this.campaign.getQuizData())
+
 }
 
 }
