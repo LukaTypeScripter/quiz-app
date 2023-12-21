@@ -38,9 +38,22 @@
       border: 0;
       padding: 0.75rem;
       box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, .14);
+      .html {
+        background-color: var(--html-bg);
+      }
+      .css {
+        background-color: var(--css-bg);
+      }
+      .js {
+        background-color: var(--js-bg);
+      }
+      .acc {
+        background-color: var(--accessibility-bg);
+      }
       &-img {
         border-radius: 0.75rem;
         padding: 0.15rem;
+
       }
     }
     &__item:nth-child(1),&__item:nth-child(3) {
@@ -52,18 +65,4 @@
   }
 }
 
-.html {
-  background-color: var(--html-bg);
-}
 
-.css {
-  background-color: var(--css-bg);
-}
-
-.js {
-  background-color: var(--js-bg);
-}
-
-.acc {
-  background-color: var(--accessibility-bg);
-}

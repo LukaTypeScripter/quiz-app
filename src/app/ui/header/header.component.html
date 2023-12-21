@@ -3,7 +3,7 @@
 
   <div class="header-darkmode__switch">
     <div class="header-darkmode__switch-moon">
-      <img  src="" alt="*"/>
+      <img (click)="isLightTheme  ? onThemeSwitchChange() : null"  src="" alt="*"/>
     </div>
 
     <!-- Use label as the block, input as an element -->
@@ -22,7 +22,7 @@
 
 
     <div class="header-darkmode__switch-sun">
-      <img  src="" alt="*"/>
+      <img (click)="!isLightTheme ? onThemeSwitchChange() : null" src="" alt="*"/>
     </div>
   </div>
 </article>
