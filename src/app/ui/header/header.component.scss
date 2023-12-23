@@ -9,9 +9,8 @@ img,svg {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
-  padding: 1rem 1.5rem;
   &__object {
-
+    visibility: hidden;
   }
 
   &-darkmode__switch {
@@ -102,6 +101,11 @@ img,svg {
     -webkit-transform: translateX(16px);
     -ms-transform: translateX(16px);
     transform: translateX(16px);
+  }
+}
+@media (min-width: 768px) {
+  .header {
+    margin-bottom: 0;
   }
 }
 

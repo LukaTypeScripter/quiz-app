@@ -1,5 +1,4 @@
 .home {
-  padding: 1rem 1.5rem;
   display: block;
   &__content {
     display: flex;
@@ -61,6 +60,30 @@
     }
     &__item:nth-child(2) {
       flex: 3;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .home{
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+    &__content {
+      h1 {
+        width: 29rem;
+      }
+    }
+    &__choices {
+      &__item {
+        width: 400px;
+      }
+      &__item:nth-child(1),&__item:nth-child(3) {
+        flex: 0;
+      }
+      &__item:nth-child(2) {
+        flex: 0;
+      }
     }
   }
 }

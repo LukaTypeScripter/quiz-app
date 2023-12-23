@@ -1,26 +1,33 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClientModule} from "@angular/common/http";
 import {CampaignService} from "../../services/campaign.service";
-import {map} from "rxjs";
 import {CommonModule} from "@angular/common";
+import {RouterLink} from "@angular/router";
+import {map} from "rxjs";
+import {Router} from "express";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,HttpClientModule],
+  imports: [CommonModule, HttpClientModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit{
-  constructor(private campaign: CampaignService) {}
+  constructor(private campaign: CampaignService,private router: Router) {}
   public titles$ = this.campaign.$titles.asObservable()
 
 ngOnInit() {
-this.titles$.pipe(map((res) => {
-  console.log(res,"awdawd")
-})).subscribe()
-
 this.campaign.getTitles()
+  this.campaign.$selectedQuiz.pipe(map((res) => {
+    console.log(res)
+  })).subscribe()
 }
+ocClickQuiz(quiz:string) {
+      this.campaign.getQuiz(quiz)
+  if(quiz) {
+    (this.router as any).navigate(['quiz', quiz]);
+  }
 
+}
 }

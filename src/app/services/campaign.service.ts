@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import {data} from "../../datas";
-import {BehaviorSubject, filter} from "rxjs";
+import {BehaviorSubject} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
 export class CampaignService {
 
-  constructor(private  http:HttpClient) { }
   public $titles = new BehaviorSubject<any>([])
-  getQuizData() {
-    return data;
-  }
+  public $selectedQuiz = new BehaviorSubject<any>(null);
   getTitles() {
     const combinedData = data.quizzes.map((res) => ({
       title: res.title,
       icon: res.icon
     }));
-
     this.$titles.next(combinedData);
+  }
+  getQuiz(section:string) {
+    const selectedQuiz  =  data.quizzes.find((quiz) => quiz.title.toLowerCase() === section.toLowerCase());
+    console.log(section)
+    this.$selectedQuiz.next(selectedQuiz)
+    return selectedQuiz
   }
 }

@@ -20,6 +20,10 @@
   --moon-src: url("./assets/images/images/icon-moon-dark.svg");
 }
 
+article {
+  padding: 1rem 1.5rem;
+}
+
 body {
   font-family: 'Rubik', sans-serif;
   background-color: var(--bg-col);
@@ -29,6 +33,8 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
+  max-width: 800px;
+  margin: auto;
 }
 
 
@@ -54,4 +60,17 @@ body {
   --header-theme-switch-background-color: #A729F5;
   --header-theme-switch-before-background-color: #ffffff;
   --header-theme-switch-checked-background-color: #2196f3;
+}
+
+@media (min-width: 768px){
+  article {
+    padding: 2.5rem 4rem;
+  }
+
+}
+@media (min-width: 1024px) {
+  body {
+    max-width: 1400px;
+    align-items: center;
+  }
 }
