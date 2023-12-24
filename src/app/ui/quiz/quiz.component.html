@@ -1,51 +1,43 @@
-
-<div class="question"*ngIf="currentQuestionIndex !== selectedQuiz?.questions?.length">
+<div class="question" *ngIf="currentQuestionIndex !== selectedQuiz?.questions?.length">
   <div class="question__header">
-      <div class="question__header-wrapper">
-        <p>Question {{ currentQuestionIndex + 1 }} of {{ selectedQuiz?.questions?.length }}</p>
-        <h2>{{currentQuestion.question}}</h2>
-      </div>
-    <div class="question__header-progress"><span [style.width.%]="progressWidth"></span></div>
+    <div class="question__header-wrapper">
+      <p>Question {{ currentQuestionIndex + 1 }} of {{ selectedQuiz?.questions?.length }}</p>
+      <h2>{{ currentQuestion.question }}</h2>
+    </div>
+    <div class="question__header-progress">
+      <span [style.width.%]="progressWidth"></span>
+    </div>
   </div>
-<div class="question__choices">
-  <button id="A" class="question__choices-option" *ngFor="let option of currentQuestion.options; let i = index" (click)="handleAnswer(option,i)" [ngClass]="{
- 'selected': i == activeAnswer && isChosen ,
-  'correct': showResult && isAnswerCorrect && i === correctAnswerIndex,
-  'wrong': showResult && !isAnswerCorrect && i === activeAnswer,
-  }" [disabled]="isChosen && isDissabled">
-    <div class="question__choices-option-box" [ngClass]="{
-   'correct': showResult && isAnswerCorrect && i === correctAnswerIndex,
-  'wrong': showResult && !isAnswerCorrect && i === activeAnswer,
-  }">{{i +1}}</div>
-    {{option}}
-  </button>
-  <button class="question__choices-submit" (click)="submitAnswer()">Submit</button>
+  <div class="question__choices">
+    <button
+      id="A"
+      class="question__choices-option"
+      *ngFor="let option of currentQuestion.options; let i = index"
+      (click)="handleAnswer(option, i)"
+      [class.selected]="i === activeAnswer && !isAnswered"
+      [class.correct]="showResult && isAnswerCorrect && i === correctAnswerIndex"
+      [class.wrong]="showResult && !isAnswerCorrect && i !== correctAnswerIndex"
+      [class.show-correct]="showCorrectAnswer && i === correctAnswerIndex"
+    >
+      <div
+        class="question__choices-option-box"
+        [class.correct-box]="showResult && isAnswerCorrect && i === correctAnswerIndex"
+        [class.wrong-box]="showResult && !isAnswerCorrect && i !== correctAnswerIndex"
+        [class.show-correct-box]="showCorrectAnswer && i === correctAnswerIndex"
+      >
+        {{ i + 1 }}
+      </div>
+      {{ option }}
+    </button>
+    <button
+      class="question__choices-submit"
+      (click)="submitAnswer()"
+      [style.opacity]="isChosen !== undefined ? '1' : '0.6'"
+    >
+      Submit
+    </button>
+  </div>
 </div>
 
-</div>
 
-
-<div *ngIf="currentQuestionIndex === selectedQuiz?.questions?.length">
-  <p>You answered {{ correctAnswersCount }} questions correctly.</p>
-</div>
-
-<!--  <h2>{{ selectedQuiz?.title }}</h2>-->
-<!--  <div *ngIf="currentQuestion">-->
-<!--    <p>{{ currentQuestionIndex + 1 }}. {{ currentQuestion.question }}</p>-->
-<!--    <div *ngFor="let option of currentQuestion.options; let i = index">-->
-<!--      <label>-->
-<!--        <input-->
-<!--          type="radio"-->
-<!--          [name]="'question_' + currentQuestionIndex"-->
-<!--          [value]="option"-->
-<!--          (change)="handleAnswer(option)"-->
-<!--        />-->
-<!--        {{ option }}-->
-<!--      </label>-->
-<!--    </div>-->
-<!--    <button (click)="submitAnswer()">Submit</button>-->
-<!--    <div *ngIf="showResult">-->
-<!--      <p *ngIf="isAnswerCorrect">Correct!</p>-->
-<!--      <p *ngIf="!isAnswerCorrect">Wrong! The correct answer is: {{ currentQuestion?.answer }}</p>-->
-<!--    </div>-->
-<!--  </div>-->
+<app-score *ngIf="currentQuestionIndex === selectedQuiz?.questions?.length" [correctAnswer]="correctAnswersCount"></app-score>

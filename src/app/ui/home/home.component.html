@@ -8,12 +8,13 @@
     <div class="home__choices" *ngIf="titles$ | async as data" >
       <button id="HTML" class="home__choices__item" (click)="ocClickQuiz(types.title)" [routerLink]="'quiz/' + types.title"  *ngFor="let types of data" >
           <div class="home__choices__item__img" >
-            <img [src]="types.icon " alt="*" class="home__choices__item-img" [ngClass]="{
-  'html': types.title === 'HTML',
-   'css': types.title === 'CSS',
-    'js': types.title === 'JavaScript',
-     'acc': types.title === 'Accessibility'
-}" />
+            <img [src]="types.icon " alt="*"
+                 class="home__choices__item-img"
+                 [class.html]="types.title === 'HTML'"
+                 [class.js]="types.title === 'JavaScript'"
+                 [class.acc]="types.title === 'Accessibility'"
+                 [class.css]="types.title === 'CSS'"
+            />
           </div>
             {{types.title}}
       </button >
