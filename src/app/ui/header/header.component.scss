@@ -1,8 +1,9 @@
-img,svg {
+img,
+svg {
   display: block;
   max-width: 100%;
 }
-:host{
+:host {
   width: 100%;
 }
 .header {
@@ -27,13 +28,13 @@ img,svg {
     &-moon {
       width: clamp(1rem, 0.823943661971831rem + 0.7511737089201878vw, 1.5rem);
       height: clamp(1rem, 0.823943661971831rem + 0.7511737089201878vw, 1.5rem);
-    img {
-      content: var(--moon-src);
-    }
+      img {
+        content: var(--moon-src);
+      }
     }
     &-main {
       &__input {
-          display: none;
+        display: none;
       }
       &__slider {
         position: absolute;
@@ -47,7 +48,6 @@ img,svg {
     }
   }
 }
-
 
 .theme-switcher {
   .switch {
@@ -108,6 +108,3 @@ img,svg {
     margin-bottom: 0;
   }
 }
-
-
-

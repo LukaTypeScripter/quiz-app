@@ -1,22 +1,19 @@
 .question {
-
   &__header {
-
     &-wrapper {
-        p{
-          color: var(--text-color-p);
-          font-style: italic;
-          font-weight: 400;
-          margin-top: 0;
-          margin-bottom: 2.5rem;
-        }
+      p {
+        color: var(--text-color-p);
+        font-style: italic;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 2.5rem;
+      }
       h2 {
         font-size: 1.25rem;
         font-size: clamp(1.25rem, 0.898rem + 1.502vw, 2.25rem);
         color: var(--text-color);
         font-weight: 500;
       }
-
     }
     &-progress {
       width: 100%;
@@ -39,7 +36,7 @@
     gap: 0.75rem;
     &-option {
       &.correct {
-        border:  3px solid var(--correct-color);
+        border: 3px solid var(--correct-color);
       }
       &.wrong {
         border: 3px solid var(--invalid-color);
@@ -48,7 +45,7 @@
         border: 3px solid var(--correct-color);
       }
       &.selected {
-        border:3px solid var(--purple);
+        border: 3px solid var(--purple);
       }
       &-box {
         display: flex;
@@ -60,7 +57,7 @@
         border-radius: 0.75rem;
         background-color: var(--option-bg);
         &.correct-box {
-          background-color:var(--correct-color);
+          background-color: var(--correct-color);
           color: white;
         }
         &.wrong-box {
@@ -68,14 +65,15 @@
           color: white;
         }
         &.show-correct-box {
-          background-color:  var(--correct-color);
+          background-color: var(--correct-color);
           color: white;
         }
       }
     }
-    &-option,&-submit {
+    &-option,
+    &-submit {
       background-color: var(--button-bg);
-       color: var(--text-color);
+      color: var(--text-color);
       font-size: 1.125rem;
       font-weight: 500;
       display: grid;
@@ -88,7 +86,7 @@
       border-radius: 0.75rem;
       border: 0;
       padding: 0.75rem;
-      box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, .14);
+      box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
     }
     &-submit {
       display: flex;
@@ -96,7 +94,6 @@
       align-items: center;
       background-color: var(--purple);
       color: white;
-
     }
   }
 }
@@ -107,7 +104,6 @@
     justify-content: center;
     &__header {
       max-width: 400px;
-
     }
     &__choices {
       &-option {
@@ -116,5 +112,3 @@
     }
   }
 }
-
-

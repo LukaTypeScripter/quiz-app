@@ -1,7 +1,13 @@
-<div class="question" *ngIf="currentQuestionIndex !== selectedQuiz?.questions?.length">
+<div
+  class="question"
+  *ngIf="currentQuestionIndex !== selectedQuiz?.questions?.length"
+>
   <div class="question__header">
     <div class="question__header-wrapper">
-      <p>Question {{ currentQuestionIndex + 1 }} of {{ selectedQuiz?.questions?.length }}</p>
+      <p>
+        Question {{ currentQuestionIndex + 1 }} of
+        {{ selectedQuiz?.questions?.length }}
+      </p>
       <h2>{{ currentQuestion.question }}</h2>
     </div>
     <div class="question__header-progress">
@@ -15,14 +21,20 @@
       *ngFor="let option of currentQuestion.options; let i = index"
       (click)="handleAnswer(option, i)"
       [class.selected]="i === activeAnswer && !isAnswered"
-      [class.correct]="showResult && isAnswerCorrect && i === correctAnswerIndex"
+      [class.correct]="
+        showResult && isAnswerCorrect && i === correctAnswerIndex
+      "
       [class.wrong]="showResult && !isAnswerCorrect && i !== correctAnswerIndex"
       [class.show-correct]="showCorrectAnswer && i === correctAnswerIndex"
     >
       <div
         class="question__choices-option-box"
-        [class.correct-box]="showResult && isAnswerCorrect && i === correctAnswerIndex"
-        [class.wrong-box]="showResult && !isAnswerCorrect && i !== correctAnswerIndex"
+        [class.correct-box]="
+          showResult && isAnswerCorrect && i === correctAnswerIndex
+        "
+        [class.wrong-box]="
+          showResult && !isAnswerCorrect && i !== correctAnswerIndex
+        "
         [class.show-correct-box]="showCorrectAnswer && i === correctAnswerIndex"
       >
         {{ i + 1 }}
@@ -38,6 +50,7 @@
     </button>
   </div>
 </div>
-
-
-<app-score *ngIf="currentQuestionIndex === selectedQuiz?.questions?.length" [correctAnswer]="correctAnswersCount"></app-score>
+<app-score
+  *ngIf="currentQuestionIndex === selectedQuiz?.questions?.length"
+  [correctAnswer]="correctAnswersCount"
+></app-score>

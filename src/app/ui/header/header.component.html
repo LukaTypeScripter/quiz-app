@@ -3,7 +3,11 @@
 
   <div class="header-darkmode__switch">
     <div class="header-darkmode__switch-moon">
-      <img (click)="isLightTheme  ? onThemeSwitchChange() : null"  src="" alt="*"/>
+      <img
+        (click)="isLightTheme ? onThemeSwitchChange() : null"
+        src=""
+        alt="*"
+      />
     </div>
 
     <header>
@@ -19,9 +23,12 @@
       </div>
     </header>
 
-
     <div class="header-darkmode__switch-sun">
-      <img (click)="!isLightTheme ? onThemeSwitchChange() : null" src="" alt="*"/>
+      <img
+        (click)="!isLightTheme ? onThemeSwitchChange() : null"
+        src=""
+        alt="*"
+      />
     </div>
   </div>
 </article>

@@ -5,13 +5,10 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-
-
   public isLightTheme = true;
-
   onThemeSwitchChange() {
     this.isLightTheme = !this.isLightTheme;
     document.body.setAttribute(
@@ -19,5 +16,4 @@ export class HeaderComponent {
       this.isLightTheme ? 'light' : 'dark'
     );
   }
-
 }

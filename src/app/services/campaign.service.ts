@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
-import {data} from "../../datas";
-import {BehaviorSubject} from "rxjs";
+import { data } from '../../datas';
+import { BehaviorSubject } from 'rxjs';
+import { Quiz, QuizTitles } from '../shared/models/quiz';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CampaignService {
-
-  public $titles = new BehaviorSubject<any>([])
-  public $selectedQuiz = new BehaviorSubject<any>(null);
+  public $titles = new BehaviorSubject<QuizTitles[]>([]);
+  public $selectedQuiz = new BehaviorSubject<Quiz | undefined>(undefined);
   getTitles() {
     const combinedData = data.quizzes.map((res) => ({
       title: res.title,
-      icon: res.icon
+      icon: res.icon,
     }));
     this.$titles.next(combinedData);
   }
-  getQuiz(section:string) {
-    const selectedQuiz  =  data.quizzes.find((quiz) => quiz.title.toLowerCase() === section.toLowerCase());
-    console.log(section)
-    this.$selectedQuiz.next(selectedQuiz)
-    return selectedQuiz
+  getQuiz(section: string) {
+    const selectedQuiz = data.quizzes.find(
+      (quiz) => quiz.title.toLowerCase() === section.toLowerCase()
+    );
+    this.$selectedQuiz.next(selectedQuiz);
+    return selectedQuiz;
   }
 }
