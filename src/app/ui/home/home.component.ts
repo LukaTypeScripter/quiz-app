@@ -3,8 +3,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {CampaignService} from "../../services/campaign.service";
 import {CommonModule} from "@angular/common";
 import {RouterLink} from "@angular/router";
+import { Router} from '@angular/router';
 import {map} from "rxjs";
-import {Router} from "express";
 
 @Component({
   selector: 'app-home',
@@ -20,13 +20,13 @@ export class HomeComponent implements OnInit{
 ngOnInit() {
 this.campaign.getTitles()
   this.campaign.$selectedQuiz.pipe(map((res) => {
-    console.log(res)
+    console.log(res,"selected")
   })).subscribe()
 }
 ocClickQuiz(quiz:string) {
       this.campaign.getQuiz(quiz)
   if(quiz) {
-    (this.router as any).navigate(['quiz', quiz]);
+    this.router.navigate(['quiz', quiz]);
   }
 
 }
