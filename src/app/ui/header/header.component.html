@@ -1,6 +1,12 @@
 <article class="header">
-  <div class="header__object">awdawdawda</div>
-
+  <div  class="header__object" *ngIf="selectedQuiz$ | async as quiz;else noQuiz">
+    <img class="header__object-img" *ngIf="isOnQuiz | async"  [src]="quiz.icon" alt="*">
+    <p class="header__object-title">{{quiz.title}}</p>
+  </div>
+  <ng-template #noQuiz>
+    <div class="header__object-hidden">
+    </div>
+  </ng-template>
   <div class="header-darkmode__switch">
     <div class="header-darkmode__switch-moon">
       <img

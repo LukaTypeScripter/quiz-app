@@ -1,3 +1,21 @@
-<div class="score" >
-  <p>You answered {{ correctAnswers }} questions correctly.</p>
-</div>
+<article class="score">
+  <div>
+    <h1>Quiz completed <span style="font-weight: 500">You scored...</span></h1>
+  </div>
+  <div>
+    <div class="score__container">
+      <div  class="score__container__object" *ngIf="selectedQuiz$ | async as quiz">
+        <img class="score__object-img" *ngIf="isOnQuiz | async"  [src]="quiz.icon" alt="*">
+        <h2 class="score__object-title">{{quiz.title}}</h2>
+      </div>
+      <h1 class="score__container-score">{{correctAnswers || 0}}</h1>
+      <p>out of 10</p>
+
+    </div>
+    <button class="score__restart" [routerLink]="'/'">Play Again</button>
+  </div>
+
+</article>
+
+
+
