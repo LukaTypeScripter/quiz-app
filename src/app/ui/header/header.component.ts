@@ -17,9 +17,9 @@ import {Quiz} from "../../shared/models/quiz";
 })
 export class HeaderComponent {
   public isLightTheme = true;
-  public selectedQuiz$ = this.capmpain.$selectedQuiz.asObservable()
-    public isOnQuiz = this.capmpain.$isOnQuiz.asObservable()
-  constructor(private capmpain:CampaignService) {
+  public selectedQuiz$ = this.campaign.$selectedQuiz.asObservable()
+    public isOnQuiz = this.campaign.$isOnQuiz.asObservable()
+  constructor(private campaign:CampaignService) {
   }
 
   onThemeSwitchChange() {
